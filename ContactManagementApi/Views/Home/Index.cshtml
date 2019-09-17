@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Contact>
+@{  Layout = "_Layout"; }
+
+<form id="addform">
+    <div class="form-group">
+        <label for="FirstName">First Name:</label>
+        <input class="form-control" name="FirstName" />
+    </div>
+    <div class="form-group">
+        <label for="LastName">Last Name:</label>
+        <input class="form-control" name="LastName" />
+    </div>
+    <div class="form-group">
+        <label for="Company">Company:</label>
+        <input class="form-control" name="Company" />
+    </div>
+    <div class="form-group">
+        <label for="ProfileImage">Profile Image:</label>
+        <input class="form-control" name="ProfileImage" />
+    </div>
+    <div class="form-group">
+        <label for="Email">Email:</label>
+        <input type="email" class="form-control" name="Email" />
+    </div>
+    <div class="form-group">
+        <label for="BirthDate">Birth Date:</label>
+        <input type="date" class="form-control" name="BirthDate" />
+    </div>
+    <div class="form-group">
+        <label for="WorkPhone">Work Phone:</label>
+        <input type="tel" class="form-control" name="WorkPhone" />
+    </div>
+    <div class="form-group">
+        <label for="PersonalPhone">Personal Phone:</label>
+        <input type="tel" class="form-control" name="PersonalPhone" />
+    </div>
+    <div class="form-group">
+        <label for="City">City:</label>
+        <input class="form-control" name="City" />
+    </div>
+    <div class="form-group">
+        <label for="State">State:</label>
+        <input class="form-control" name="State" />
+    </div>
+    <div class="form-group">
+        <label for="Zip">Zip:</label>
+        <input class="form-control" name="Zip" />
+    </div>
+    <div class="text-center panel-body">
+        <button type="submit" class="btn btn-sm btn-primary">Add</button>
+    </div>
+</form>
+
+<table class="table table-sm table-striped table-bordered m-2">
+    <thead><tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Company</th><th>Profile Image</th><th>Email</th><th>Birth Date</th><th>Work Phone</th><th>Personal Phone</th><th>City</th><th>State</th><th>Zip</th></tr></thead>
+    <tbody>
+        @foreach (var c in Model) {
+        <tr>
+            <td>@c.ContactId</td>
+            <td>@c.FirstName</td>
+            <td>@c.LastName</td>
+            <td>@c.Company</td>
+            <td>@c.ProfileImage</td>
+            <td>@c.Email</td>
+            <td>@c.BirthDate</td>
+            <td>@c.WorkPhone</td>
+            <td>@c.PersonalPhone</td>
+            <td>@c.City</td>
+            <td>@c.State</td>
+            <td>@c.Zip</td>
+        </tr>
+        }
+    </tbody>
+</table>
